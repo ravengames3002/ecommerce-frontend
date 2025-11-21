@@ -1,0 +1,51 @@
+// Group 5/register.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>E-Commerce Store</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="register.html" id="registerLink">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="auth-form">
+        <h2>Register</h2>
+        <form id="registerForm">
+          <input type="text" id="name" placeholder="Full Name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="password" id="password" placeholder="Password" required>
+          <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+          <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="login.html">Login here</a></p>
+        <div id="message"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      await register();
+    });
+  </script>
+</body>
+</html>

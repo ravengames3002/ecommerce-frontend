@@ -1,0 +1,46 @@
+// Group 5/orders.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>E-Commerce Store</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html" id="cartLink">Cart</a>
+        <a href="orders.html" id="ordersLink">Orders</a>
+        <a href="admin.html" id="adminLink" style="display:none;">Admin</a>
+        <button id="logoutBtn">Logout</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <h2>My Orders</h2>
+      <section id="ordersContainer" class="orders-list">
+        <p>Loading orders...</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      updateNavigation();
+      await loadMyOrders();
+      document.getElementById('logoutBtn').addEventListener('click', logout);
+    });
+  </script>
+</body>
+</html>
