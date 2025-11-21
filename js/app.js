@@ -1,6 +1,6 @@
 // Group 5/js/app.js
 const API_URLS = {
-  auth: 'http://localhost:5001',
+  auth: 'https://ecommerce-auth.onrender.com',
   products: 'http://localhost:5002',
   cart: 'http://localhost:5003',
   orders: 'http://localhost:5004'
@@ -552,3 +552,4 @@ const updateOrderStatus = async (orderId, status) => {
     console.error('Error updating order:', error);
   }
 };
+
