@@ -1,0 +1,61 @@
+// Group 5/index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Store</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>E-Commerce Store</h1>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html" id="cartLink">Cart</a>
+        <a href="orders.html" id="ordersLink" style="display:none;">Orders</a>
+        <a href="admin.html" id="adminLink" style="display:none;">Admin</a>
+        <a href="#" id="userLink" style="display:none;">Profile</a>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+        <a href="login.html" id="loginLink">Login</a>
+        <a href="register.html" id="registerLink">Register</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section class="filters">
+        <input type="text" id="searchInput" placeholder="Search products...">
+        <select id="categoryFilter">
+          <option value="">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Home">Home</option>
+        </select>
+      </section>
+
+      <section id="productsContainer" class="products-grid">
+        <p>Loading products...</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Commerce Store. All rights reserved.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+      updateNavigation();
+      await loadProducts();
+      
+      document.getElementById('searchInput').addEventListener('input', loadProducts);
+      document.getElementById('categoryFilter').addEventListener('change', loadProducts);
+    });
+  </script>
+</body>
+</html>
